@@ -1,4 +1,4 @@
-::Batch file to extract certificates from PFX file
+::Batch file to extract certificates from PFX file. Place this in C:\SSL on the recorder
 @echo off
 title Extract certificate and key to the Red Box Apache web folder
 mkdir C:\ssl\pfx
@@ -22,6 +22,7 @@ echo The process is complete if you see 2 files, import your files within the re
 echo.
 del c:\ssl\keys\%input%.key
 del /P c:\ssl\pfx\%input%.pfx
+rmdir /S c:\ssl\pfx
 pause
 
 ::To create a PFX from the key and certificate:
